@@ -1,7 +1,7 @@
 import { useMovieContext } from "../contexts/MovieContext";
 
 function MovieCard({ movie }) {
-  const { addToFavorites } = useMovieContext();
+  const { toggleFavorites } = useMovieContext();
 
   return (
     <div className="movie-card">
@@ -13,7 +13,7 @@ function MovieCard({ movie }) {
         <div className="movie-overlay">
           <button
             className="favorite-btn"
-            onClick={() => addToFavorites(movie)}
+            onClick={() => toggleFavorites(movie)}
           >
             ❤️
           </button>

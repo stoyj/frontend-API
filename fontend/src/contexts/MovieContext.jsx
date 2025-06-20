@@ -26,6 +26,13 @@ export const MovieProvider = ({ children }) => {
     setFavorites((prev) => prev.filter((movie) => movie.id !== movieId));
   };
 
+  const toggleFavorites = (movie) => {
+    const isAdded = favorites.find((val) => val.id === movie.id);
+
+    if (isAdded) removeFromFavorites(movie.id);
+    else addToFavorites(movie);
+  };
+
   const isFavorite = (movieId) => {
     return favorites.some((movie) => movie.id === movieId);
   };
@@ -34,6 +41,7 @@ export const MovieProvider = ({ children }) => {
     favorites,
     addToFavorites,
     removeFromFavorites,
+    toggleFavorites,
     isFavorite,
   };
 
