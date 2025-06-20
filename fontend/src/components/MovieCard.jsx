@@ -3,6 +3,10 @@ import { useMovieContext } from "../contexts/MovieContext";
 function MovieCard({ movie }) {
   const { toggleFavorites } = useMovieContext();
 
+  // const isFavourite - променлива която проверява дали филма е в любими
+
+  // на бутона, ако isFavourite е true, смени цвета на фона
+
   return (
     <div className="movie-card">
       <div className="movie-poster">
