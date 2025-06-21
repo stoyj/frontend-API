@@ -1,11 +1,11 @@
+import "../css/MovieCard.css";
 import { useMovieContext } from "../contexts/MovieContext";
 
 function MovieCard({ movie }) {
-  const { toggleFavorites } = useMovieContext();
+  const { isFavorite, toggleFavorites } = useMovieContext();
 
-  // const isFavourite - променлива която проверява дали филма е в любими
-
-  // на бутона, ако isFavourite е true, смени цвета на фона
+  // Това връща true или false за конкретния филм
+  const favorite = isFavorite(movie.id);
 
   return (
     <div className="movie-card">
@@ -16,10 +16,10 @@ function MovieCard({ movie }) {
         />
         <div className="movie-overlay">
           <button
-            className="favorite-btn"
+            className={`favorite-btn ${favorite ? "active" : ""}`}
             onClick={() => toggleFavorites(movie)}
           >
-            ❤️
+            🤍
           </button>
         </div>
       </div>
