@@ -69,8 +69,17 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.favorite-btn.active {
+/* .favorite-btn.active {
   color: #ff4757;
+} */
+.favorite-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.favorite-btn.active {
+  background-color: red; /* цвят по избор за любими */
 }
 
 .rating-select {
